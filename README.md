@@ -1,6 +1,12 @@
 # DeepTarget
 ## V2 Of GDeepTarget For Bioconductor
-
+## install the devtools prior install the package.
+install.packages("devtools")
+## call the library
+library(devtools)
+## intall Deeptarget
+install_github("TrinhNguyenP/DeepTarget")
+## call the deeptarget
 library (DeepTarget)
 ## data 
 data (OntargetM)
