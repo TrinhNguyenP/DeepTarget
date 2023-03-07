@@ -2,10 +2,11 @@
 ## V2 Of GDeepTarget For Bioconductor
 
 library (DeepTarget)
-
+## data 
 data (OntargetM)
-### 5 random drugs
+## set seed
 set.seed (12345)
+### 5 random drugs
 All.Drugs <- OntargetM$DrugMetadata[,"broad_id_trimmed"]
 S.Drugs <- sample(All.Drugs, 5)
 
