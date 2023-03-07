@@ -23,6 +23,7 @@ KO.GES <- OntargetM$avana_CRISPR
 sec.prism <- OntargetM$secondary_prism
 ## ## Obtain the similarity between the viablity scores from drug target treatment vs Gene effect score from KO method
 sim <- mclapply(S.Drugs,function(x) GetSim(x,DRS=sec.prism, GES=KO.GES),mc.cores = 2)
+##
 names(sim) <- S.Drugs
 ## meta data from the drug treatment
 Meta.data <- OntargetM$DrugMetadata
