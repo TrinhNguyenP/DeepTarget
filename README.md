@@ -40,6 +40,6 @@ MutantInteract <- DoInteractMutant (Predtargets=DrugTargetSim,Mutant=d.mt,DRS=se
 ## obtain the best similarity scores for the known targeted genes from the drugs
 Drug.Gene.max.sim <- PredMaxSim(Sim.GES.DRS=sim, D.M = Meta.data)
 ## perfom the pathway analyis based on the drug meta data ranking by similarity between the viablity scores from drug target treatment vs Gene effect score from KO method 
-Meta.data <- OntargetM$DrugMetadata
+
 Pwy.Enr <- DoPWY(Sim.GES.DRS=sim,D.M = Meta.data)
 
