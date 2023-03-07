@@ -12,8 +12,9 @@ library (DeepTarget)
 data (OntargetM)
 ## set seed
 set.seed (12345)
-### 5 random drugs
+### Drug IDs
 All.Drugs <- OntargetM$DrugMetadata[,"broad_id_trimmed"]
+## 5 random drugs
 S.Drugs <- sample(All.Drugs, 5)
 
 ## Gene effect scores from KO method
