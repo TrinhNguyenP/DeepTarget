@@ -29,6 +29,7 @@ DrugTargetSim <- PredTarget(sim,Meta.data)
 d.expr <- OntargetM$expression_20Q4
 ## finding the interaction of the viablity scores vs Gene effect score in term of high and low expression
 ExpInteract <- DoInteractExp (DrugTargetSim,d.expr,sec.prism,KO.GES,CutOff = 2)
+###
 TargetExpSpecificity <- data.frame(MaxTgt_Inter_Exp_strength=sapply(ExpInteract, function(x) x[1]), MaxTgt_Inter_Exp_Pval=sapply(ExpInteract, function(x) x[2]))
 row.names(Target_Exp_specificity) <- row.names(DrugTargetSim)
 # mutant 
