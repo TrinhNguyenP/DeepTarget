@@ -11,7 +11,7 @@ library (DeepTarget)
 ## data 
 data (OntargetM)
 
-## 5 random drugs
+## use two drug as an example.
 S.Drugs <- c('K70301465','K09951645')
 ## Gene effect scores from KO method
 KO.GES <- OntargetM$avana_CRISPR
@@ -51,9 +51,9 @@ all(sapply(list(row.names(DrugTargetSim),
 Pred.d$Whether_interaction_Ex_based=sapply(ExpInteract, function(x) x[1]<0 & x[2]<0.2 )
 ## mutation interaction with P <0.1
 Pred.d$predicted_resistance_mutation = Pred.d$MaxTgt_Inter_Mut_Pval<0.1
-####### use cut.off=2
+####### obtain the best similarity scores f
 Low.Exp = sapply(Pred.d[,3],function(x)errHandle(sum(d.expr[x,] < 2)) )
-###
+### Use cutoff<2
 Pred.d$Low.Exp.Group <- Low.Exp
 ####### Plot the interaction bt viablilty and resonse to the drug for WT and mutant form.
 DOI = 'dabrafenib'
