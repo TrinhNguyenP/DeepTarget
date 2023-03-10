@@ -37,6 +37,7 @@ d.mt <- OntargetM$mutations_mat
 MutantInteract <- DoInteractMutant (Predtargets=DrugTargetSim,Mutant=d.mt,DRS=sec.prism,GES=KO.GES)
 ## assign the estimate as strength, and P val from the interaction model.
 TargetMutSpecificity <- data.frame(MaxTgt_Inter_Mut_strength=sapply(MutantInteract, function(x) x[1]), MaxTgt_Inter_Mut_Pval=sapply(MutantInteract, function(x) x[2]))
+#####
 row.names(Target_Mut_specificity) <- row.names(DrugTargetSim)
 ## obtain the best similarity scores for the known targeted genes from the drugs
 Drug.Gene.max.sim <- PredMaxSim(Sim.GES.DRS=sim, D.M = Meta.data)
@@ -44,14 +45,15 @@ Drug.Gene.max.sim <- PredMaxSim(Sim.GES.DRS=sim, D.M = Meta.data)
 identical ( DrugTargetSim[,1],Drug.Gene.max.sim[,1] )
 all(sapply(list(row.names(DrugTargetSim),
                 row.names(TargetMutSpecificity)), FUN = identical, row.names(TargetExpSpecificity)))
+ #####
  Pred.d <- cbind ( DrugTargetSim,DrugGeneMaxSim,TargetMutSpecificity,TargetExpSpecificity)
-### based on Pred.d, select one drug and one GOI to plot.
 ## whether interaction is true or false based on cut-off. estimate and p val from lm model
 Pred.d$Whether_interaction_Ex_based=sapply(ExpInteract, function(x) x[1]<0 & x[2]<0.2 )
 ## mutation interaction with P <0.1
 Pred.d$predicted_resistance_mutation = Pred.d$MaxTgt_Inter_Mut_Pval<0.1
 ####### use cut.off=2
 Low.Exp = sapply(Pred.d[,3],function(x)errHandle(sum(d.expr[x,] < 2)) )
+###
 Pred.d$Low.Exp.Group <- Low.Exp
 ####### Plot the interaction bt viablilty and resonse to the drug for WT and mutant form.
 DOI = 'dabrafenib'
