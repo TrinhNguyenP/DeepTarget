@@ -27,11 +27,7 @@ GetSim(drugName =DrugName, DRS= drugResponseScore,GES= GeneEffectScores)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-    \item{drug1 }{a dataframe contains genes with their cor values and P val associated with response scores from drug treatment}
-    \item{drug2 }{a dataframe contains genes with their cor values and P val associated with response scores from drug treatment}
-     \item{drugN }{a dataframe contains genes with their cor values and P val associated with response scores from drug treatment}
-
-
+ a dataframe contains genes with their cor values and P val associated with response scores from a given drug ID
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -60,12 +56,4 @@ names(sim) <- S.Drugs
 #saveRDS(sim,
   #      file = paste('drugVScrispr.Similarity.List.RDS', Sys.Date(), '.RDS', sep=''))
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.
+

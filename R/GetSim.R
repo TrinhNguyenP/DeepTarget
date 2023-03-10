@@ -3,6 +3,7 @@ GetSim <- function(drugName=DrugName, DRS= drugResponseScore,GES= GeneEffectScor
   ## make sure that users already use the common cell lines in both datasets >> the result will be precise.
   common.c=intersect(colnames(DRS),
                      colnames(GES))
+
   DRS.c=DRS[drugName,common.c ]
   GES.c=GES[,common.c]
   ## calculate corelation.

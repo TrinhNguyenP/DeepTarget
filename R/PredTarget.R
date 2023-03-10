@@ -29,7 +29,8 @@ PredTarget <- function(Sim.GES.DRS=sim, D.M = Drug.Metadata){
 
    ## if there is one drug.
      if ( nrow(D.M.f)==1){
-        Target.Max.cor = max(Stat.Drug,na.rm=T )
+         ## add errHandle function to avoid the eror of returing -Inf
+        Target.Max.cor = errHandle(max(Stat.Drug,na.rm=T ))
         Target.Max.Name=names(Stat.Drug)[which.max(Stat.Drug)]
         ## drug Id will be the same as the metadata.
         Drug.id <- names(Sim.GES.DRS)

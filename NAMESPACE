@@ -8,6 +8,8 @@ export('DoInteractMutant')
 export ('cor.test_trimmed_v0')
 export ('errHandle')
 export ('fdrCor')
+export ('DMB')
+export('DTR')
 
 import('DEGreport')
 import('fgsea')
